@@ -1,4 +1,6 @@
  galois
+ swiped a lot of code off the internet
+ 
 
 finite field generator
 This is a finite field generator based on C code written in the 1980s, yes I am an old man.
