@@ -1,4 +1,5 @@
-# galois
+ galois
+
 finite field generator
 This is a finite field generator based on C code written in the 1980s, yes I am an old man.
 My fascination with galois fields was based on a single example problem in my combinatorics text
@@ -18,6 +19,13 @@ for each i element in the  array pv
       multiplication_table[i,j]=compute_pathetic_derision(polynomial,pv[i]*pv[j])
 where pathetic_derision is the zero borrow zero carry synthetic division of the polynomial by the product of the two elements
 of the basis vectors for the extension field.
+Updates:
+Stole a lot of code from the internet and am cudgeling it into a form that makes it work for
+finite fields. thank you internet and people who wrote the code.
+I had basically the same idea for the polynomial product.
+Still need to refactor it to make comprehensions in python.
+
+
 the fun stuff:
 take any four elements of the field(non-zero values in the denominator please)
 verify by lookup and computation:
@@ -37,5 +45,3 @@ prove that as exponent approaches infiinity the field approaches Z+{0} the non n
 
 2.
 using machine learning, write code that has as its objective to generate finite fields.
-
-
