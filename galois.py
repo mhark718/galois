@@ -1,5 +1,6 @@
-base=2
-exponent=8
+base=5
+exponent=2
+theirreduciblePoly=[1,0,0,1]
 coefficents=[3,1,0,2]
 def expanded_synthetic_division(dividend, divisor):
     """Fast polynomial division by using Expanded Synthetic Division. 
@@ -8,11 +9,13 @@ def expanded_synthetic_division(dividend, divisor):
     Dividend and divisor are both polynomials, which are here simply lists of coefficients. 
     E.g.: x**2 + 3*x + 5 will be represented as [1, 3, 5]
     """
+    #print(dividend,divisor)
     out = list(dividend)  # Copy the dividend
     normalizer = divisor[0]
     for i in range(len(dividend) - len(divisor) + 1):
         # For general polynomial division (when polynomials are non-monic),
         # we need to normalize by dividing the coefficient with the divisor's first coefficient
+        print("wtf")
         out[i] /= normalizer
 
         coef = out[i]
@@ -28,7 +31,8 @@ def expanded_synthetic_division(dividend, divisor):
     # what we couldn't divide from the dividend), so we compute the index
     # where this separation is, and return the quotient and remainder.
     separator = 1 - len(divisor)
-    return out[:separator], out[separator:]  # Return quotient, remainder.
+    #return out[:separator], out[separator:]  # Return quotient, remainder.
+    return  out[separator:]  # Return quotient, remainder.
 #def f(j,base=7):
 #	return (2*j*j+j+3)%base
 #expanded_synthetic_division
@@ -104,7 +108,8 @@ int2polynomial(320,2,8)
 print(int2polynomial(32743,4,16))
 #13333213
 for i in range(base**exponent):
+	print("___________")
 	for j in range(base**exponent):
 	#print(i)
-	    print(i, j,polynomial_multiplication(int2polynomial(i,base,exponent),int2polynomial(j,base,exponent),base))
-	    #expanded_synthetic_division(int2polynomial(i,base,exponent),int2polynomial(j,base,exponent))
+	    theProduct=(i, j,polynomial_multiplication(int2polynomial(i,base,exponent),int2polynomial(j,base,exponent),base))
+	    print(expanded_synthetic_division(theProduct,theirreduciblePoly))
