@@ -3,6 +3,14 @@ exponent=5
 coefficents=[3,1,0,2]
 #def f(j,base=7):
 #	return (2*j*j+j+3)%base
+def polynomialProduct(p1,p2,fieldbase):
+	# all products are modulo the underlying base.
+	
+	return
+	
+def syntheticDivision(irreduciblePoly, theProduct):
+	#return the remainder.
+	return 
 def int2polynomial(theint,thebase,theexponent):
 	extended=thebase**theexponent
 	curtheint=theint
@@ -17,6 +25,7 @@ def int2polynomial(theint,thebase,theexponent):
 	theList.reverse()
 	#print(theList,"done.")
 	return theList
+
 def product(poly1,poly2):
 	print(poly1)
 	print(poly2)
